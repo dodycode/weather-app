@@ -1,4 +1,11 @@
 # weather-app
+Simple forecast weather app that build with VueJS.
+
+### Materials
+* [DarkSky API](https://darksky.net)
+* [Skycons](https://darkskyapp.github.io/skycons)
+* [Vue Skycons](https://github.com/timleland/vue-skycon) 
+* [Vue Resource](https://github.com/pagekit/vue-resource)
 
 ## Project setup
 ```
@@ -27,3 +34,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Notes
+This project made for practice purposes
