@@ -62,7 +62,6 @@ export default {
         return res.json();
       })
       .then(function(data){
-        console.log(data);
         this.fahrenheitTemp = data.currently.temperature;
         this.celciusTemp = Math.floor((this.fahrenheitTemp - 32) * (5 / 9));
         this.tempToShow = this.fahrenheitTemp;

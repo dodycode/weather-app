@@ -1,0 +1,17 @@
+{
+  "name": "dodycode-weather",
+  "type": "static",
+  "static": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "alias": "dodycode-weather",
+  "files": [
+    "dist"
+  ]
+}
