@@ -17,9 +17,7 @@
 import Location from './components/Location.vue';
 import Temperature from './components/Temperature.vue';
 
-let long;
-let lat;
-let url;
+let url = '';
 
 export default {
   name: 'app',
@@ -40,18 +38,25 @@ export default {
     }
   },
   mounted: function() {
+    const API_KEY = '7b65d8d3119debc45fecfdc69e47f247';
+    let long = '';
+    let lat = '';
+
     if (navigator.geolocation) {
+
       navigator.geolocation.getCurrentPosition(function(pos) {
-        this.lat = pos.coords.latitude;
-        this.long = pos.coords.longitude;
-        this.url = `https://api.darksky.net/forecast/7b65d8d3119debc45fecfdc69e47f247/${this.lat},${this.long}`;
+        lat = pos.coords.latitude;
+        long = pos.coords.longitude;
+        this.url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${long}`;
+        this.getForecast();
+      }.bind(this),
+      function(error){
+        lat = '-8.650000';
+        long = '115.216667';
+        this.url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${long}`;
         this.getForecast();
       }.bind(this));
-    }else{
-      this.lat = '-8.650000';
-      this.long = '115.216667';
-      this.url = `https://api.darksky.net/forecast/7b65d8d3119debc45fecfdc69e47f247/${this.lat},${this.long}`;
-      this.getForecast();
+
     }
   },
   methods: {
