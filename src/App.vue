@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div v-if="loading">Loading...</div>
+    <div v-if="loading">Loading weather data...</div>
     <Location v-if="timezone && icon" v-bind:timezone="{
       timezone: timezone,
       icon: icon
