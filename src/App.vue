@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     getForecast: function() {
-      let proxy = `https://cors-anywhere.herokuapp.com/`;
+      let proxy = `https://dodycode-cors-anywhere.vercel.app/`;
       this.$http.get(proxy+this.url)
       .then(function(res) {
         return res.json();
